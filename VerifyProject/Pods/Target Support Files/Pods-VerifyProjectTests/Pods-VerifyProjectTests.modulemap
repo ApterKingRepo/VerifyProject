@@ -1,0 +1,6 @@
+framework module Pods_VerifyProjectTests {
+  umbrella header "Pods-VerifyProjectTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
