@@ -19,7 +19,7 @@ pipeline {
     stage('生成配置文件') {
       steps {
         dir('./VerifyProject/Config') {
-          echo "${params.module}" > config
+          sh 'echo '${params.module}' > Config'
         }
       }
     }
@@ -27,7 +27,7 @@ pipeline {
     stage('配置Podfile') {
       steps {
         dir('./VerifyProject/fastlane') {
-          sh 'bundle exec fastlane ios config_pod'
+          sh 'source ~/.bash_profile && bundle exec fastlane ios config_pod'
         }
       }
     }
