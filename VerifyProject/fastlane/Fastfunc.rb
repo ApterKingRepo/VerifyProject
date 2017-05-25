@@ -17,7 +17,6 @@ def build_ipa(config)
   gym(
     use_legacy_build_api: true,
     destination: "generic/platform=iOS",
-    sdk: "iphoneos",
     workspace: ENV['FL_WORKSPACE_PATH'],
     configuration: config,
     scheme: ENV['FL_SCHEME'],
