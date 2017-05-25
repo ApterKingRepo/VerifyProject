@@ -20,7 +20,7 @@ def build_ipa(config)
     sdk: "iphoneos",
     workspace: ENV['FL_WORKSPACE_PATH'],
     configuration: config,
-    scheme: ENV['SCHEME'],
+    scheme: ENV['FL_SCHEME'],
     silent: true,
     clean: true,
     include_bitcode: true,
