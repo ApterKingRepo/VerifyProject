@@ -15,7 +15,7 @@ def build_ipa(config)
   #)
   # sh 'security unlock-keychain -u ~/Library/Keychains/login.keychain'
   gym(
-    use_legacy_build_api: true,
+    sdk: "iPhoneOS",
     destination: "generic/platform=iOS",
     workspace: ENV['FL_WORKSPACE_PATH'],
     configuration: config,
