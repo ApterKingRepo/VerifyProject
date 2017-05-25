@@ -256,6 +256,7 @@
 				TargetAttributes = {
 					6E87CDE61ED570C700613B69 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = FJAP4H992E;
 						ProvisioningStyle = Automatic;
 					};
 					6E87CDFA1ED570C700613B69 = {
@@ -616,6 +617,7 @@
 			baseConfigurationReference = 11442049BB92FFABE9280528 /* Pods-VerifyProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FJAP4H992E;
 				INFOPLIST_FILE = VerifyProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ApterKing.VerifyProject;
@@ -629,6 +631,7 @@
 			baseConfigurationReference = 7EBE04DCD2DD7EB0229435E4 /* Pods-VerifyProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FJAP4H992E;
 				INFOPLIST_FILE = VerifyProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ApterKing.VerifyProject;
@@ -714,6 +717,7 @@
 				6E87CE111ED570C700613B69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E87CE121ED570C700613B69 /* Build configuration list for PBXNativeTarget "VerifyProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -722,6 +726,7 @@
 				6E87CE141ED570C700613B69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E87CE151ED570C700613B69 /* Build configuration list for PBXNativeTarget "VerifyProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -730,6 +735,7 @@
 				6E87CE171ED570C700613B69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
