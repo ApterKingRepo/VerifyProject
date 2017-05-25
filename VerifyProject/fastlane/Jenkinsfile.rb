@@ -1,9 +1,9 @@
 pipeline {
   agent any   // 你也可以使用 agent {label 'mac_for_iOS'}
 
-  environment {
-    BASH_PROFILE = '~/.bash_profile'
-  }
+  #environment {
+  #  BASH_PROFILE = '~/.bash_profile'
+  #}
 
   parameters {
       string(name: 'module', defaultValue: 'A,B,C,D,E', description: '组件')
@@ -19,15 +19,16 @@ pipeline {
     stage('生成配置文件') {
       steps {
         dir('./VerifyProject/Config') {
-          sh 'echo '${params.module}' > Config'
+          sh "echo '${params.module}' > Config"
         }
       }
     }
 
     stage('配置Podfile') {
       steps {
+        sh 'pwd'
         dir('./VerifyProject/fastlane') {
-          sh 'source ~/.bash_profile && bundle exec fastlane ios config_pod'
+          sh 'bundle exec fastlane ios config_pod'
         }
       }
     }

@@ -20,7 +20,7 @@ default_platform :ios
 
 platform :ios do
   before_all do
-  
+
     bundle_install(
       gemfile: "./VerifyProject/fastlane/Gemfile"
     )
@@ -42,13 +42,15 @@ platform :ios do
   desc "构建项目"
   desc "Usage： bundle exec fastlane ios build config:[Debug/Release]"
   lane :build do |options|
-    build_ipa
+    config = options[:config] ? options[:config] : 'Debug'
+    build_ipa config
   end
 
   desc "部署到蒲公英"
   desc "Usage: bundle exec fastlane ios deploy config:[Debug/Release]"
   lane :deploy do |options|
-    deploy_to_pgyer
+    config = options[:config] ? options[:config] : 'Debug'
+    deploy_to_pgyer config
   end
 
   after_all do |lane|
