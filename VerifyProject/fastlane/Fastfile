@@ -21,9 +21,7 @@ default_platform :ios
 platform :ios do
   before_all do
 
-    bundle_install(
-      gemfile: "./VerifyProject/fastlane/Gemfile"
-    )
+    bundle_install
 
   end
 
@@ -50,7 +48,9 @@ platform :ios do
   desc "Usage: bundle exec fastlane ios deploy config:[Debug/Release]"
   lane :deploy do |options|
     config = options[:config] ? options[:config] : 'Debug'
-    deploy_to_pgyer config
+    user_key = ENV['FL_PGYER_USER_KEY']
+    api_key = ENV['FL_PGYER_API_KEY']
+    deploy_to_pgyer config, user_key, api_key
   end
 
   after_all do |lane|
