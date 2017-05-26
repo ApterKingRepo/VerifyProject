@@ -29,6 +29,7 @@ platform :ios do
   desc "Usage: bundle exec fastlane ios config_generate param:[数据/URL等]"
   lane :config_generate do |options|
     # 这里我们以简单的直接传递参数为例
+    echo options[:param]
     param = options[:param] ? options[:param] : 'A,B,C,D,E'
     sh "echo #{param} > ../Config/Config"
   end
