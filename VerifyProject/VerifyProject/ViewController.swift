@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         guard let module = config else {
             return []
         }
+        module.trimmingCharacters(in: whitespaceAndNewlineCharacterSet())
         return module.components(separatedBy: ",")
     }()
 
