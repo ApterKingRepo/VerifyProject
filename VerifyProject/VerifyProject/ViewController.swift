@@ -40,10 +40,10 @@ class ViewController: UIViewController {
     let dataSource: [String] = {
         var configPath = Bundle.main.path(forResource: "Config", ofType: nil)
         var config = try? String(contentsOfFile: configPath!, encoding: .utf8)
-        guard let module = config else {
+        guard var module = config else {
             return []
         }
-        module.trimmingCharacters(in: .whitespacesAndNewlines)
+        module = module.trimmingCharacters(in: .whitespacesAndNewlines)
         return module.components(separatedBy: ",")
     }()
 
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
-        }()
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
