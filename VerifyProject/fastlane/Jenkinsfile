@@ -18,8 +18,8 @@ pipeline {
 
     stage('生成配置文件') {
       steps {
-        dir('./VerifyProject/Config') {
-          sh "echo '${params.module}' > Config"
+        dir('./VerifyProject/fastlane') {
+          sh 'bundle exec fastlane ios generate_config param:#{params.module}'
         }
       }
     }
@@ -59,7 +59,7 @@ pipeline {
 
   post {
     failure {
-      echo '构建失败,你可以调用远程通知，或者发送一个Emai'
+      echo '构建失败,你可以调用远程通知，或者发送一个Email'
     }
 
     success {
