@@ -7,7 +7,7 @@ IFS="$OLD_IFS"
 file="../Config/Config.swift"
 for each in ${arr[@]}
 do
-    sed -i "" "$ a\ 
-    	import Verify+${each}
+    sed -i "" "$ a\
+    	import Verify_${each}
     " $file
 done
