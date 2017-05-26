@@ -7,7 +7,6 @@ def build_ipa(config)
   # sh 'security unlock-keychain -u ~/Library/Keychains/login.keychain'
   gym(
     workspace: ENV['FL_WORKSPACE_PATH'],
-    project: ENV['FL_PROJECT_PATH'],
     scheme: ENV['FL_SCHEME'],
     clean: true,
     output_directory: File.expand_path("#{ENV['FL_OUTPUT_ROOT_DIRECTORY']}/archive/#{config}/ipa"),

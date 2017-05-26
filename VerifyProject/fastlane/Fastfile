@@ -30,7 +30,7 @@ platform :ios do
   lane :generate_config do |options|
     # 这里我们以简单的直接传递参数为例
     param = options[:param] ? options[:param] : 'A,B,C,D,E'
-    sh "echo #{param} > ../Config/Config"
+    sh "echo A,B,C,D,E > ../Config/Config"
   end
 
   desc "配置Podfile"
