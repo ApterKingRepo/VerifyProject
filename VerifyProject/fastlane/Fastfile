@@ -36,6 +36,7 @@ platform :ios do
   desc "配置Podfile"
   desc "Usage: bundle exec fastlane ios config_pod"
   lane :config_pod do
+    sh 'pwd'
     sh 'sh ./config_pod.sh'
     cocoapods
   end
