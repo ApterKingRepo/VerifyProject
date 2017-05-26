@@ -11,7 +11,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.35.0"
+fastlane_version "2.35.1"
 require './Fastfunc.rb'
 fastlane_require 'dotenv'
 Dotenv.load('App.env')
@@ -30,19 +30,20 @@ platform :ios do
   lane :generate_config do |options|
     # 这里我们以简单的直接传递参数为例
     param = options[:param] ? options[:param] : 'A,B,C,D,E'
-    sh 'echo ${param} > ../Config/Config'
+    sh "echo #{param} > ../Config/Config"
   end
 
   desc "配置Podfile"
   desc "Usage: bundle exec fastlane ios config_pod"
   lane :config_pod do
-    pod_install
+    sh 'sh ./config_pod.sh'
+    cocoapods
   end
 
   desc "配置组件"
   desc "Usage: bundle exec fastlane ios config_module"
   lane :config_module do
-
+    sh 'sh ./config_module.sh'
   end
 
   desc "构建项目"

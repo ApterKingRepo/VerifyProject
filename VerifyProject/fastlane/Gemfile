@@ -1,6 +1,6 @@
 source 'https://gems.ruby-china.org/'
 
-gem 'fastlane', '2.35.0'
+gem 'fastlane', '2.35.1'
 gem 'slather'
 gem 'gym'
 gem 'xcov'
