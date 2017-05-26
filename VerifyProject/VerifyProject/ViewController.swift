@@ -12,9 +12,10 @@ class CustomCell: UICollectionViewCell {
 
     let content: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.font = UIFont.boldSystemFont(ofSize: 50)
         label.layer.borderWidth = 2.0
         label.layer.borderColor = UIColor.lightGray.cgColor
+        label.textAlignment = .center
         return label
     }()
 
@@ -91,7 +92,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            return UIEdgeInsets.zero
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -108,7 +109,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         let classType = NSClassFromString(className) as? UIViewController.Type
         if let type = classType {
             let controller = type.init()
-            self.navigationController?.pushViewController(controller, animated: true)
+            self.present(controller, animated: true, completion: {
+
+            })
         }
     }
 }
