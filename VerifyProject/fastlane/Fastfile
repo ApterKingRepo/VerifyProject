@@ -42,12 +42,6 @@ platform :ios do
     cocoapods
   end
 
-  desc "配置组件"
-  desc "Usage: bundle exec fastlane ios config_module"
-  lane :config_module do
-    sh 'sh ./config_module.sh'
-  end
-
   desc "构建项目"
   desc "Usage： bundle exec fastlane ios build config:[Debug/Release]"
   lane :build do |options|

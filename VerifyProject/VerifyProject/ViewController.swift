@@ -61,6 +61,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        self.title = "主页面"
         self.view.addSubview(collectionView)
     }
 
@@ -88,7 +89,7 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.size.width - 40) / 3, height: (UIScreen.main.bounds.size.width - 40) / 3)
+        return CGSize(width: (UIScreen.main.bounds.size.width - 50) / 3, height: (UIScreen.main.bounds.size.width - 50) / 3)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -105,13 +106,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let module = dataSource[indexPath.row]
-        let className = module + "ViewController"
-        let classType = NSClassFromString(className) as? UIViewController.Type
-        if let type = classType {
-            let controller = type.init()
-            self.present(controller, animated: true, completion: {
-
-            })
-        }
+        let className = "Verify_" + module + "." + module + "ViewController"
+        print("--------- " + className + "  ---------")
+        let clazz: AnyClass = NSClassFromString(className)!
+        let controller = (clazz as! UIViewController.Type).init()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

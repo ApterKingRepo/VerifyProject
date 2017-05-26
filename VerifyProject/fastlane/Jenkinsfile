@@ -28,14 +28,6 @@ pipeline {
       }
     }
 
-    stage('配置模块') {
-      steps {
-        dir('./VerifyProject/fastlane') {
-          sh 'bundle exec fastlane ios config_module'
-        }
-      }
-    }
-
     stage('构建项目') {
       steps {
         dir('./VerifyProject/fastlane') {
