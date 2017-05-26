@@ -1,5 +1,5 @@
 #!/bin/bash
-module=`cat ../Config/Config`
+module=`cat ../Config/Config | xargs echo`
 OLD_IFS="$IFS"
 IFS=","
 arr=($module)
