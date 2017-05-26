@@ -19,7 +19,7 @@ pipeline {
     stage('生成配置文件') {
       steps {
         dir('./VerifyProject/fastlane') {
-          sh 'bundle exec fastlane ios generate_config param:#{params.module}'
+          sh 'bundle exec fastlane ios config_generate param:${params.module}'
         }
       }
     }

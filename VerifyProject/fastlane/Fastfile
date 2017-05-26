@@ -26,11 +26,11 @@ platform :ios do
   end
 
   desc "生成配置文件"
-  desc "Usage: bundle exec fastlane ios generate_config param:[数据/URL等]"
-  lane :generate_config do |options|
+  desc "Usage: bundle exec fastlane ios config_generate param:[数据/URL等]"
+  lane :config_generate do |options|
     # 这里我们以简单的直接传递参数为例
     param = options[:param] ? options[:param] : 'A,B,C,D,E'
-    sh "echo A,B,C,D,E > ../Config/Config"
+    sh "echo #{param} > ../Config/Config"
   end
 
   desc "配置Podfile"
