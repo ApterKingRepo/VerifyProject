@@ -7,7 +7,7 @@ IFS="$OLD_IFS"
 file="../Podfile"
 for each in ${arr[@]}
 do
-    sed -i "" "/use_frameworks!/a\
+    sed -i "" "/use_frameworks!/a\ 
         pod 'Verify+${each}'
     " $file
 done
