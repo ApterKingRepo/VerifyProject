@@ -16,7 +16,6 @@ def build_ipa(config)
     include_bitcode: true,
     export_method: "development",
     build_path: File.expand_path("#{ENV['FL_OUTPUT_ROOT_DIRECTORY']}/archive/#{config}/archive"),
-    sdk: "10.3",
     destination: "generic/platform=iOS"
   )
 end
