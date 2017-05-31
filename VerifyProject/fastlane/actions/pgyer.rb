@@ -23,7 +23,7 @@ module Fastlane
           command << "-F updateDescription=#{params[:update_description]}"
         end
 
-        command << "https://www.pgyer.com/apiv1/app/upload"
+        command << "https://qiniu-storage.pgyer.com/apiv1/app/upload"
         Actions.sh(command.join(' '))
         UI.message "Upload to pre.im successful ⬆️ "
       end
