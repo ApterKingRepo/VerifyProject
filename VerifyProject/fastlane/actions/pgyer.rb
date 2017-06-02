@@ -25,7 +25,7 @@ module Fastlane
 
         command << "https://qiniu-storage.pgyer.com/apiv1/app/upload"
         Actions.sh(command.join(' '))
-        UI.message "Upload to pre.im successful ⬆️ "
+        UI.message "Upload to pgyer.im successful ⬆️ "
       end
 
       #####################################################
